@@ -4,7 +4,11 @@ Challenge #100:
 http://www.reddit.com/r/dailyprogrammer/comments/106go0/9202012_challenge_100_easy_sleep_cycle_estimator/
 
 This challenge comes to us from nagasgura
-	The human body goes through 90 minute sleep cycles during the night, and you feel more refreshed if you wake up at the end of a sleep cycle than if you wake up during a sleep cycle. The challenge is to make a program that takes a wake-up time and outputs the possible times to fall asleep so that you will wake up at the end of a sleep cycle.
+	The human body goes through 90 minute sleep cycles during the night, 
+	and you feel more refreshed if you wake up at the end of a sleep cycle 
+	than if you wake up during a sleep cycle. The challenge is to make a program 
+	that takes a wake-up time and outputs the possible times to fall asleep so 
+	that you will wake up at the end of a sleep cycle.
 
 Example:
 	Input (Wake-up time): 6:15 AM
