@@ -13,8 +13,8 @@ Example:
 	Input (Wake-up time): 6:15 AM
 	Output (when to go to sleep): 9:15 PM, 10:45 PM, 12:15 AM, or 1:45 AM
 
-Bonus 1: Be able to input a sleep time and output potential wake-up times
-Bonus 2: Account for how long it takes to fall asleep
+	Bonus 1: Be able to input a sleep time and output potential wake-up times
+	Bonus 2: Account for how long it takes to fall asleep
 '''
 
 from datetime import datetime, timedelta
@@ -63,10 +63,13 @@ if __name__ == '__main__':
 	# Input (Wake-up time): 6:15 AM
 	# Output (when to go to sleep): 9:15 PM, 10:45 PM, 12:15 AM, or 1:45 AM
 	print(getBedTime('6:15 AM', maxHours=9, minHours=4.5))
-
+	# Result: ['09:15 PM', '10:45 PM', '12:15 AM', '01:45 AM']
+	
 	# Bonus 1: Be able to input a sleep time and output potential wake-up times
-	# Use fallAsleepOffset arg
-	print(getBedTime('6:15 AM', maxHours=9, minHours=4.5, fallAsleepOffset=0))
-
-	# Bonus 2: N/A
+	# I didn't do this one.
+	
+	# Bonus 2: 
+	# Use fallAsleepOffset kwarg
+	print(getBedTime('7:38 AM', maxHours=12, minHours=5, fallAsleepOffset=24))
+	# Result: ['07:14 PM', '08:44 PM', '10:14 PM', '11:44 PM', '01:14 AM']
 
