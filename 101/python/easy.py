@@ -66,6 +66,9 @@ if __name__ == '__main__':
 	print "Found %s range(s) of years with length of non-repeating numbers: %s" % (len(noRepeat.keys()), len(noRepeat[noRepeat.keys()[0]]))
 	for key, item in noRepeat.iteritems():
 		print "\t", key, item
+	# Result:
+	# Found 1 range(s) of years with length of non-repeating numbers: 6
+	#	(1982, 1987) [1982, 1983, 1984, 1985, 1986, 1987]
 
 	# Get longest range of repeating years
 	repeat = getLongestRun([1000, 2013], repeat=True)
