@@ -17,11 +17,11 @@ def recur(y, repeat=False):
 
 	# Recursive function
 	def inRecur(y, repeat):
-		if repeat and len(set(list(str(y)))) != 4:
+		if repeat and len(set(list(str(y)))) != len(list(str(y))):
 			data.append(y)
 			y += 1
 			inRecur(y, repeat)
-		elif not repeat and len(set(list(str(y)))) == 4:
+		elif not repeat and len(set(list(str(y)))) == len(list(str(y))):
 			data.append(y)
 			y += 1
 			inRecur(y, repeat)
