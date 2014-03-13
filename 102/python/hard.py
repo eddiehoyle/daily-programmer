@@ -39,5 +39,5 @@ def get_pokemon():
 
 # The data I mined doesn't have all 1000 Pokemon or what ever there is now,
 # so I've limited the range of Pokemon to return to original 151. Let's be
-# honest, they're the only cool ones.
+# honest, they're the only cool ones
 print get_pokemon()
