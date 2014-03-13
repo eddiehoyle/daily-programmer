@@ -28,7 +28,9 @@ def get_pokemon():
 		name = re_name.search(between).groups()[0]
 		pokemon[name] = []
 
-		# Some Pokemon can be multiple types
+		# Some Pokemon can have multiple types. This expression looks for a 
+		# pattern that looks like 001-BulbasaurType:Grass/PoisonLocations and extracts
+		# Grass, Poison into a tuple
 		re_types = re.compile(r"%s-[%sA-Za-z]+Type:([A-Z][a-z]+)/?(|[A-Z][a-z]+)Locations" % (i, name))
 		types = re_types.search(between).groups()
 
