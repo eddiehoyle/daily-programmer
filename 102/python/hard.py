@@ -141,7 +141,19 @@ def attack(move, pokemon):
 
 # =================================================== #
 # Some Examples
-attack("Thunder", "Pikachu")
-attack("Surf", "Onix")
-attack("Psychic", "Pidgey")
 
+attack("Thunder", "Pikachu")
+# Using Thunder on Pikachu...
+# Not very effective.
+ 
+attack("Surf", "Onix")
+# Using Surf on Onix...
+# It's super effective!
+
+attack("Psychic", "Pidgey")
+# Using Psychic on Pidgey...
+# Normal.
+
+attack("Fissure", "Moltres")
+# Using Fissure on Moltres...
+# No effect.
