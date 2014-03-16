@@ -51,13 +51,13 @@ def get_moves():
 	moves = "".join(html[html.find('id="moves"'):].split())
 
 	# ---------------- #
-	# Open file, read html, split up into (Name, Type, Attack) 
-	# eg: (Acid, Posion, 20) tuple
+	# Open file, read html
 	# f = open("/Users/eddiehoyle/Sites/dailyProgrammer/102/python/moves.txt")
 	# html = f.read()
 	# moves = "".join(html[html.find('id="moves"'):].split())
 	# f.close()
 	
+	#, split up into (Name, Type, Attack) eg: (Acid, Posion, 20) tuple
 	data = {}
 	found = re.findall(r"Viewdetailsfor(\w+).+?/type/.+?>(\w+).+?num.+?>(\-|\w+)", moves)
 	for m in found:
@@ -105,9 +105,19 @@ def get_multiplier(attack, defense):
 
 def attack(move, pokemon):
 	"""Determine how effective a move is against a pokemon"""
-	move_type = MOVES[move][0]
-	move_power = MOVES[move][1]
-	pokemon_types = POKEMON[pokemon]
+	try:
+		move_type = MOVES[move][0]
+		move_power = MOVES[move][1]
+	except KeyError:
+		print "ERROR: Move not found: %s" % (move)
+		return
+
+	try:
+		pokemon_types = POKEMON[pokemon]
+	except KeyError:
+		print "ERROR: Pokemon not found: %s" % (pokemon)
+		return
+	
 
 	# Get multiplier for type(s)
 	value = 1
@@ -115,13 +125,23 @@ def attack(move, pokemon):
 		value *= get_multiplier(move_type, pt)
 
 	# Output
+	effect = ""
 	if move_power == 0 or value == 0:
-		print "No effect."
+		effect = "No effect."
 	elif value == 0.5:
-		print "Not very effective."
+		effect = "Not very effective."
 	elif value == 1:
-		print "Normal."
-	elif value == 2:
-		print "It's super effective!"
+		effect = "Normal."
+	elif value >= 2:
+		effect = "It's super effective!"
 
+	# Output
+	print "Using %s on %s..." % (move, pokemon)
+	print effect
+
+# =================================================== #
+# Some Examples
+attack("Thunder", "Pikachu")
+attack("Surf", "Onix")
+attack("Psychic", "Pidgey")
 
