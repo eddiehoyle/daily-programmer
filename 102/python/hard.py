@@ -1,9 +1,17 @@
 """
+# 102, Hard
+http://www.reddit.com/r/dailyprogrammer/comments/10pfsf/9302012_challenge_102_difficult_pok%C3%A9mon_types/
+
+Ah, who doesn't remember the endless hours wasted playing Pokemon games on a Game Boy during long car rides? I sure do. Pokemon had an interesting battle system, and one of the nice mechanics was the type system.
+For this challenge, you'll be writing a function, type_effect, that takes two string arguments -- the offending move's name and the defending Pokemon's name -- and returns a multiplier like 2.0 or 0.25.
+Generally, you take the offending move's type, look up the multipliers for all the defending Pokemon's types in the type chart, and multiply them together. As an example, we'll run through the calculations for type_effect("Ice Beam", "Dragonite").
+	(Optionally, use enums instead of strings, like type_effect(M_ICE_BEAM, P_DRAGONITE)).
+	Ice Beam[1] is an Ice move.
+	Dragonite[2] has multiple types, Dragon and Flying.
+	According to the type chart[3] , Ice vs. Dragon has a 2.0 bonus, and Ice vs. Flying has a 2.0 bonus, too. Multiplying these together, you get 4.0, so return 4.0.
 """
  
-import re
-import urllib2
-import os
+import re, urllib2, os
 
 def get_pokemon():
 	'''Get dict of pokemon and types'''
