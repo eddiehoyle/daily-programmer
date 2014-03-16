@@ -76,7 +76,7 @@ def get_moves():
 			m[2] = 0
 
 		# Assign move and type
-		data[m[0]]=(m[1], float(m[2]))
+		data[m[0]]=(m[1], int(m[2]))
 
  	return data
 
