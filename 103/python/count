@@ -1,0 +1,32 @@
+#!/usr/bin/env python
+
+import os
+import sys
+import logging
+from argparse import ArgumentParser
+
+from table import LeetDict
+
+logging.basicConfig(level=logging.INFO)
+log = logging.getLogger(__name__)
+
+def main(args):
+    if not args.string:
+        log.error("Needs string argument: -s \"some string\"")
+        sys.exit(1)
+
+    leet = LeetDict(args.file)
+    print leet.count(args.string)
+
+def parse_args():
+    parser = ArgumentParser()
+    parser.add_argument("-f", "--file", dest="file", action="store")
+    parser.add_argument("-s", "--string", dest="string", action="store")
+    parser.add_argument("-c", "--count", dest="filename",
+                      action="store_true")
+
+    return parser.parse_args()
+
+if __name__ == '__main__':
+    main(parse_args())
+
