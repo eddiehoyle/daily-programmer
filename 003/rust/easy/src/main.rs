@@ -30,9 +30,7 @@ fn parse_opts(args: &Vec<String>) -> Matches {
 }
 fn main() {
     let args: Vec<String> = env::args().collect();
-    let program = args[0].clone();
-
-    println!("Program: {:?}", program);
+    // let program = args[0].clone();
 
     let opts = parse_opts(&args);
     if opts.opt_present("w") {
