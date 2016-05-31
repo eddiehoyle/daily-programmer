@@ -1,6 +1,7 @@
 
 // CMake
 *CMakeLists.txt
+**.idea
 
 // Rust
 *Cargo.lock
